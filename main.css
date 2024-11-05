@@ -17,3 +17,40 @@ header {
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
+/* Form Section */
+#date-form-section {
+    background-color: #e6f0ff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Date input and button styling */
+#apod-date {
+    max-width: 150px;
+}
+
+#date-form button {
+    background-color: #007bff;
+    color: white;
+}
+
+#date-form button:hover {
+    background-color: #0056b3;
+}
+
+/* APOD Display Section */
+#apod-display-section {
+    transition: opacity 0.3s ease;
+}
+
+#apod-display-section.d-none {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#apod-image {
+    cursor: pointer;
+    border-radius: 8px;
+}
