@@ -15,6 +15,41 @@
              <header class="text-center mb-4">
                 <h1>Astronomy Picture of the Day</h1>
              </header>
+
+             <!-- Date Selection form -->
+              <section id="date-form-selection" class="mb-5">
+                <form id="date-form" class="row g-3 justify-content-center">
+                    <div class="col-auto">
+                        <label for="apod-date" class="visually-hidden">Select Date</label>
+                        <input type="date" id="apod-date" name="apod-date" class="form-control" max="">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-3">Get Picture</button>
+                    </div>
+                </form>
+              </section>
+
+              <!-- APOD Display Section -->
+               <section id="apod-display-section" class="mb-5 d-none">
+                <div class="card">
+                    <img src="" class="card-img-top" alt="Astronomy Picture of the Day" id="apod-image">
+                    <div class="card-body">
+                        <h5 class="card-title" id="apod-title"></h5>
+                        <p class="card-text"><small class="text-muted" id="apod-date-display"></small></p>
+                        <p class="card-text" id="apod-explanation"></p>
+                        <button class="btn btn-success" id="add-favorite-btn">Add to Favorites</button>
+                    </div>
+                </div>
+               </section>
+
+
+               <!-- Favorites Section -->
+                <section id="favorites-section">
+                    <h2>Favorites</h2>
+                    <div class="row" id="favorites-container">
+                        
+                    </div>
+                </section>
         </div>
     </body>
 </html>
