@@ -14,3 +14,15 @@ const addFavoriteBtn = document.getElementById('add-favorite-btn');
 const favoritesContainer = document.getElementById('favorites-container');
 const hdApodImageModal = new bootstrap.Modal(document.getElementById('hdImageModal'));
 const hdApodImage = document.getElementById('hd-apod-image');
+
+//Initialize max date for the date input (today's date)
+apodDateInput.max = new Date().toISOString().split('T')[0];
+
+//Event listener for date form submission
+dateform.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const date =apodDateInput.ariaValueMax;
+    if (date) {
+        await fetchApod(date);
+    }
+});
