@@ -47,9 +47,24 @@
                 <section id="favorites-section">
                     <h2>Favorites</h2>
                     <div class="row" id="favorites-container">
-                        
+                        <!-- Favorites items will be appended here -->
                     </div>
                 </section>
         </div>
+
+        <!-- Modal for High Definition Image -->
+         <div class="modal fade" id="hdImageModal" tabindex="-1" aria-labelledby="hdImageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="hdImageModalLabel">High Definition Image</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="" alt="High Definition APOD" id="hd-apod-image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+         </div>
     </body>
 </html>
