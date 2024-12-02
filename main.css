@@ -102,3 +102,21 @@ header {
 }
 
 /* Favorites Section */
+#favorites-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 2rem;
+}
+
+#favorites-section h2 {
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+#favorites-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
