@@ -31,16 +31,33 @@ dateform.addEventListener('submit', async (e) => {
     }
 });
 
-//Get APOD data for a selected date
-async function fetchApod(date) {
-    try {
-        const response = await fetch(`${BASE_URL}&date=${date}`);
-        const data = await response.json();
-        displayApod(data);
-    } catch (error) {
-        console.error('Error fetching APOD:', error);
-    }
+const dateInputBox = document.getElementById('apod-date')
+const datePicker = document.getElementById('get-date-btn')
+const imgContainer = document.getElementById('img-container')
+
+datePicker.addEventListener('click', function () {
+    const dateSelected = dateInputBox.value
+    fetchData(dateSelected)
+})
+
+async function fetchData(date) {
+    const response = await fetch(`${BASE_URL}&date=${date}`)
+    const data = await response.json()
+    console.log(data)
+    imgContainer.src = data.url
+    apodTitle.textContent = data.title
+
+    addFavoriteBtn.addEventListener('click', function() {
+        favoritesContainer.classList.remove('d-none')
+        // add the data to the favorite data array, then iterate and display all the information
+        favoriteData.push(data)
+        const favoriteHtml = favoriteData.map(data => {
+            
+        })
+        
+    })
 }
+
 
 // Display the APOD data on the page
 function displayApod(data) {
