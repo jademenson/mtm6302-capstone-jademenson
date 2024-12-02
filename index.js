@@ -31,3 +31,8 @@ dateform.addEventListener('submit', async (e) => {
     }
 });
 
+//Get APOD data for a selected date
+async function fetchApod(date) {
+    try {
+        const response = await fetch(`${BASE_URL}&date=${date}`);
+        const data = await response.json();
