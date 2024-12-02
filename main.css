@@ -120,3 +120,18 @@ header {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
 }
+
+/* Modal */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-body {
+    background-color: #f11cca;
+    color: white;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+}
