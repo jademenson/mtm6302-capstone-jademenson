@@ -24,15 +24,15 @@
                         <input type="date" id="apod-date" name="apod-date" class="form-control" max="">
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">Get Picture</button>
+                        <button id="get-date-btn" type="submit" class="btn btn-primary mb-3">Get Picture</button>
                     </div>
                 </form>
               </section>
 
               <!-- APOD Display Section -->
-               <section id="apod-display-section" class="mb-5 d-none">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Astronomy Picture of the Day" id="apod-image">
+               <section id="apod-display-section" class="mb-5">
+                <div class="">
+                    <img id="img-container" src="" class="" alt="Astronomy Picture of the Day" id="apod-image">
                     <div class="card-body">
                         <h5 class="card-title" id="apod-title"></h5>
                         <p class="card-text"><small class="text-muted" id="apod-date-display"></small></p>
@@ -46,8 +46,8 @@
                <!-- Favorites Section -->
                 <section id="favorites-section">
                     <h2>Favorites</h2>
-                    <div class="row" id="favorites-container">
-                        <!-- Favorites items will be appended here -->
+                    <div class="row" id="favorites-container" class="d-none">
+                       
                     </div>
                 </section>
         </div>
