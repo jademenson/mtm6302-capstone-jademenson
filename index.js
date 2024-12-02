@@ -36,3 +36,20 @@ async function fetchApod(date) {
     try {
         const response = await fetch(`${BASE_URL}&date=${date}`);
         const data = await response.json();
+        displayApod(data);
+    } catch (error) {
+        console.error('Error fetching APOD:', error);
+    }
+}
+
+// Display the APOD data on the page
+function displayApod(data) {
+    imgContainer.src = data.url;
+    imgContainer.alt = data.title;
+    apodTitle.textContent = data.title;
+    apodDateDisplay.textContent = data.date;
+    apodExplanation.textContent = data.explanation;
+    imgContainer.addEventListener('click', () => {
+        hdApodImage.src = data.hdurl || data.url;
+        hdApodImageModal.show();
+    });
