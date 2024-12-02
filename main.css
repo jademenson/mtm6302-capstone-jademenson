@@ -86,3 +86,17 @@ header {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
+
+#add-favorite-btn {
+    background-color: #f11cca;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#add-favorite-btn:hover {
+    background-color: #cc139a; /* Darker pink for hover effect */
+}
