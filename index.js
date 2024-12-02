@@ -16,11 +16,8 @@ const hdApodImageModal = new bootstrap.Modal(document.getElementById('hdImageMod
 const hdApodImage = document.getElementById('hd-apod-image');
 
 
-const favoriteData = []
-// iterate
-favoriteData.map(favorite => {
-    //favorite.innerHTML += `<img src='favorite.url' alt=''>`
-})
+// Initialize an array to store favorite items
+let favoriteData = [];
 
 //Initialize max date for the date input (today's date)
 apodDateInput.max = new Date().toISOString().split('T')[0];
@@ -34,29 +31,3 @@ dateform.addEventListener('submit', async (e) => {
     }
 });
 
-const dateInputBox = document.getElementById('apod-date')
-const datePicker = document.getElementById('get-date-btn')
-const imgContainer = document.getElementById('img-container')
-
-datePicker.addEventListener('click', function () {
-    const dateSelected = dateInputBox.value
-    fetchData(dateSelected)
-})
-
-async function fetchData(date) {
-    const response = await fetch(`${BASE_URL}&date=${date}`)
-    const data = await response.json()
-    console.log(data)
-    imgContainer.src = data.url
-    apodTitle.textContent = data.title
-
-    addFavoriteBtn.addEventListener('click', function() {
-        favoritesContainer.classList.remove('d-none')
-        // add the data to the favorite data array, then iterate and display all the information
-        favoriteData.push(data)
-        const favoriteHtml = favoriteData.map(data => {
-            
-        })
-        
-    })
-}
