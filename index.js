@@ -53,3 +53,48 @@ function displayApod(data) {
         hdApodImage.src = data.hdurl || data.url;
         hdApodImageModal.show();
     });
+        // Enable the "Add to Favorites" button
+        addFavoriteBtn.onclick = () => addToFavorites(data);
+    }
+  
+    
+// Add the current APOD data to favorites
+function addToFavorites(data) {
+    // Check if the item already exists in favorites
+    if (favoriteData.some((favorite) => favorite.date === data.date)) {
+        alert('This item is already in your favorites!');
+        return;
+    }
+
+     // Add the item to the favorites array
+     favoriteData.push(data);
+     updateFavorites();
+    }
+
+    // Update the favorites section with the current favorites
+function updateFavorites() {
+    // Clear the current favorites display
+    favoritesContainer.innerHTML = '';
+
+    // Iterate through favoriteData to create cards for each favorite item
+    favoriteData.forEach((favorite) => {
+        const favoriteCard = document.createElement('div');
+        favoriteCard.classList.add('col', 'card', 'text-center');
+        favoriteCard.style.width = '18rem';
+        favoriteCard.innerHTML = `
+            <img src="${favorite.url}" class="card-img-top" alt="${favorite.title}">
+            <div class="card-body">
+                <h5 class="card-title">${favorite.title}</h5>
+                <p class="card-text"><small class="text-muted">${favorite.date}</small></p>
+                <button class="btn btn-danger" onclick="removeFromFavorites('${favorite.date}')">Remove</button>
+            </div>
+        `;
+        favoritesContainer.appendChild(favoriteCard);
+    });
+}
+
+// Remove a favorite by date
+function removeFromFavorites(date) {
+    favoriteData = favoriteData.filter((favorite) => favorite.date !== date);
+    updateFavorites();
+}
