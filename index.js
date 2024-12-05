@@ -48,13 +48,11 @@ async function fetchData(date) {
     apodTitle.textContent = data.title
 
     addFavoriteBtn.addEventListener('click', function() {
+        console.log('the btn was clicked')
         favoritesContainer.classList.remove('d-none')
         // add the data to the favorite data array, then iterate and display all the information
-        favoriteData.push(data)
-        const favoriteHtml = favoriteData.map(data => {
-            
-        })
-        
+        addToFavorites(data)
+
     })
 }
 
@@ -71,22 +69,36 @@ function displayApod(data) {
         hdApodImageModal.show();
     });
         // Enable the "Add to Favorites" button
-        addFavoriteBtn.onclick = () => addToFavorites(data);
+        // addFavoriteBtn.addEventListener('click', function() {
+        //     favoritesContainer.classList.remove('d-none')
+        //     // add the data to the favorite data array, then iterate and display all the information
+        //     addToFavorites(data)
+
+        // })
+        // addFavoriteBtn.onclick = () => addToFavorites(data);
     }
   
     
 // Add the current APOD data to favorites
 function addToFavorites(data) {
+    console.log('before add favorites', favoriteData)
     // Check if the item already exists in favorites
     if (favoriteData.some((favorite) => favorite.date === data.date)) {
-        alert('This item is already in your favorites!');
-        return;
-    }
+            alert('This item is already in your favorites!');
+            return;
+        } else {
+    
+    // if (favoriteData.some((favorite) => favorite.date === data.date)) {
+    //     alert('This item is already in your favorites!');
+    //     return;
+    // }
 
      // Add the item to the favorites array
      favoriteData.push(data);
+     console.log("updated favorite data:", favoriteData)
      updateFavorites();
-    }
+        }
+}    
 
     // Update the favorites section with the current favorites
 function updateFavorites() {
