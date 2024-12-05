@@ -125,6 +125,7 @@ function updateFavorites() {
 // Remove a favorite by date
 function removeFromFavorites(date) {
     favoriteData = favoriteData.filter((favorite) => favorite.date !== date);
+    saveFavorites();
     updateFavorites();
 }
 
