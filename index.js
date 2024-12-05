@@ -127,3 +127,6 @@ function removeFromFavorites(date) {
     favoriteData = favoriteData.filter((favorite) => favorite.date !== date);
     updateFavorites();
 }
+
+//Initialize app
+loadFavorites();
