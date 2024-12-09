@@ -129,5 +129,5 @@ function removeFromFavorites(date) {
     updateFavorites();
 }
 
-//Initialize app
+//Initialize app    
 loadFavorites();
